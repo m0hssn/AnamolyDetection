@@ -7,7 +7,7 @@ from load_sam import download_file
 if __name__ == '__main':
     args = Namespace(
                         lr=3e-4,  # Learning rate
-                        epochs=2,  # Number of epochs (the model was trained for 700 eochs in the original paper, based on experimental resaults the best number of epochs is 2, as the model is trained more it no longer identifies the animals as anamolies)
+                        epochs=2,  # Number of epochs (the model was trained for 700 eochs in the original paper)
                         batch_size=8,  # Batch size for training
                         num_workers=4,  # Number of workers for the DataLoader
                         img_root="/Empty_1",  # Path to the root directory of images
