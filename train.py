@@ -121,7 +121,7 @@ def train(args):
                 out_mask_sm = torch.softmax(out_mask, dim=1)
 
                 # Predicted segmentation mask
-                pred_mask = out_mask_sm.argmax(dim=1)
+                pred_mask = out_mask_sm[:, 1, :, :].argmax(dim=1)
 
                 # Compute Dice score for this batch
                 dice = dice_coefficient(pred_mask, true_masks)
