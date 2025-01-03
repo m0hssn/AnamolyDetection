@@ -10,9 +10,12 @@ import imgaug.augmenters as iaa
 from perlin import rand_perlin_2d_np
 
 class TrainDataset(Dataset):
-    def __init__(self, image_dir, anomaly_source_path, resize, transforms_img, transforms_mask):
-        self.image_dir = image_dir
-        self.image_paths = sorted(glob.glob(f"{image_dir}/*.jpg"))
+    def __init__(self, image_paths, anomaly_source_path, resize, transforms_img, transforms_mask):
+        # self.image_dir = image_dir
+        # self.image_paths = sorted(glob.glob(f"{image_dir}/*.jpg"))
+        
+        self.image_paths = image_paths
+
         self.anomaly_source_paths = sorted(glob.glob(f"{anomaly_source_path}/*/*.jpg"))
         self.resize = resize
         self.transforms_img = transforms_img

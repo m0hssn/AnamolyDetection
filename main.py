@@ -7,14 +7,17 @@ from load_sam import download_file
 if __name__ == '__main':
     args = Namespace(
                         lr=3e-4,  # Learning rate
-                        epochs=2,  # Number of epochs (the model was trained for 700 eochs in the original paper)
+                        epochs=500,  # Number of epochs (the model was trained for 700 eochs in the original paper)
                         batch_size=8,  # Batch size for training
                         num_workers=4,  # Number of workers for the DataLoader
+                        
                         img_root="/Empty_1",  # Path to the root directory of images
+                        
                         anamolypath="anamolyset/dtd/images",  # Path to the anomaly source
 
                         imag_non_empty_dir='/Non-empty_1',
                         csv_file_dir='/Non-empty_1/gt.csv',
+                        
                         masks_path ='/sam-masks-gen',
 
                         url = 'https://www.robots.ox.ac.uk/~vgg/data/dtd/download/dtd-r1.0.1.tar.gz',
@@ -22,7 +25,6 @@ if __name__ == '__main':
 
                         url_sam='https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth',
                         sam_path='sam_vit_h_4b8939.pth',
-
                     )
 
     download_file(args.url_sam, args.sam_path)    
