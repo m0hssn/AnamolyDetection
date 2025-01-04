@@ -3,8 +3,10 @@ from load_anamoly import download_and_extract_dataset
 from argparse import Namespace
 from generate_masks_sam import generate
 from load_sam import download_file
+import warnings
 
 if __name__ == '__main':
+    warnings.filterwarnings("ignore")
     args = Namespace(
                         lr=3e-4,  # Learning rate
                         epochs=500,  # Number of epochs (the model was trained for 700 eochs in the original paper)
